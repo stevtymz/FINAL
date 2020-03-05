@@ -9,6 +9,7 @@ use App\Http\Requests\UpdateSupportStaffAppraisalRequest;
 use App\Profile;
 use App\SupportStaffAppraisal;
 use App\User;
+use App\DepartmentUser;
 use Gate;
 use Carbon\Carbon;
 use App\Appraisal_period;
@@ -24,8 +25,9 @@ class SupportStaffAppraisalController extends Controller
 
         $supportStaffAppraisals = SupportStaffAppraisal::all();
         $dat = Appraisal_period::all();
+        $head_of_departments = DepartmentUser::with('department')->get();
 
-        return view('admin.supportStaffAppraisals.index', compact('supportStaffAppraisals','dat'));
+        return view('admin.supportStaffAppraisals.index', compact('supportStaffAppraisals','dat','head_of_departments'));
     }
 
     public function create()

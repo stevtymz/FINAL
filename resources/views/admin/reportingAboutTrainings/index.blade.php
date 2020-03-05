@@ -4,7 +4,7 @@
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route("admin.reporting-about-trainings.create") }}">
-                {{ trans('global.add') }} A reportingAboutTraining
+                Report About Training
             </a>
         </div>
     </div>

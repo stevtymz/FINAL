@@ -21,7 +21,7 @@
             <div class="form-group">
             @if(Auth::user()->profile)
                 
-                <select hidden class="form-control select2 {{ $errors->has('profile') ? 'is-invalid' : '' }}" name="head_of_department_id" id="head_of_department_id" required>
+                <select hidden class="form-control {{ $errors->has('profile') ? 'is-invalid' : '' }}" name="head_of_department_id" id="head_of_department_id" required>
                     @foreach($profiles as $id => $profile)
                         <option value="{{ auth::user()->profile->head_of_department_id }}" {{ old('head_of_department_id') == $id ? 'selected' : '' }}>{{ $profile }}</option>
                     @endforeach
@@ -31,7 +31,7 @@
              </div>
             
             <div class="form-group">
-                <button class="btn btn-danger" type="submit">
+                <button class="btn btn-primary" type="submit">
                     {{ trans('global.save') }}
                 </button>
             </div>

@@ -95,7 +95,13 @@
                                 {{ $supportStaffAppraisal->profile->current_job_title ?? '' }}
                             </td>
                             <td>
-                                {{ $supportStaffAppraisal->profile->department ?? '' }}
+                            @foreach($head_of_departments as $head_of_department)
+                            @if($supportStaffAppraisal->head_of_department_id == $head_of_department->user_id && $head_of_department->department->title)
+                            
+                                <p>{{ $head_of_department->department->title }}</p>
+
+                            @endif       
+                            @endforeach
                             </td>
                            
                             <td>

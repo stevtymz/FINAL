@@ -29,8 +29,8 @@
             @endif
              </div>
             <div class="form-group">
-                <button class="btn btn-danger" type="submit">
-                    {{ trans('global.save') }}
+                <button class="btn btn-primary" type="submit">
+                    Submit
                 </button>
             </div>
         </form>

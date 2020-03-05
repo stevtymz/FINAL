@@ -4,7 +4,7 @@
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route("admin.rewards.create") }}">
-                {{ trans('global.add') }} Reward
+                 Reward Employee
             </a>
         </div>
     </div>
@@ -29,9 +29,11 @@
                         <th>
                             Reward
                         </th>
+                        @if(Auth::user()->isHR())
                         <th>
                             Description
                         </th>
+                        @endif
                         <th>
                             &nbsp;
                         </th>
@@ -50,9 +52,11 @@
                             <td>
                                 {{ $reward->reward ?? '' }}
                             </td>
+                            @if(Auth::user()->isHR())
                             <td>
                                 {{ $reward->description ?? '' }}
                             </td>
+                            @endif
                             <td>
                                 @can('reward_show')
                                     <a class="btn btn-xs btn-primary" href="{{ route('admin.rewards.show', $reward->id) }}">

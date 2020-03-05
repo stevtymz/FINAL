@@ -96,7 +96,14 @@
                             </td>
                            
                             <td>
-                                {{ $performance->head_of_department->title ?? '' }}
+                            
+                            @foreach($head_of_departments as $head_of_department)
+                            @if($performance->head_of_department_id == $head_of_department->user_id && $head_of_department->department->title)
+                            
+                                <p>{{ $head_of_department->department->title }}</p>
+
+                            @endif       
+                            @endforeach
                             </td>
 
                             <td>

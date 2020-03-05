@@ -112,7 +112,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.profile.fields.head_of_department_helper') }}</span>
             </div>
-            @endif
+            @endif 
         
             <div class="form-group">
                 <button class="btn btn-primary" type="submit">

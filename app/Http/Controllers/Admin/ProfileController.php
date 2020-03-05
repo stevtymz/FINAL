@@ -28,7 +28,9 @@ class ProfileController extends Controller
 
         $profiles = Profile::all();
 
-        return view('admin.profiles.index', compact('profiles'));
+        $head_of_departments = DepartmentUser::with('department')->get();
+
+        return view('admin.profiles.index', compact('profiles','head_of_departments'));
     }
  
     public function create()
@@ -106,8 +108,7 @@ class ProfileController extends Controller
          $head =  User::whereHas('roles', function($query) {
             $query->whereId(3);
         })
-        ->pluck('name', 'id')
-        ->prepend(trans('global.pleaseSelect'), '');
+        ->pluck('name', 'id');
 
         // appraisers for support heads
         $head_of_support =  User::whereHas('roles', function($query) {

@@ -74,15 +74,24 @@
                             <td>
                                 {{ $profile->date_of_birth ?? '' }}
                             </td>
+
                             <td>
                                 {{ $profile->current_education ?? '' }}
                             </td>
                             <td>
                                 {{ $profile->current_job_title ?? '' }}
                             </td>
+
                             <td>
-                                {{ $profile->head_of_department->title ?? '' }}
+                            @foreach($head_of_departments as $head_of_department)
+                            @if($profile->head_of_department_id == $head_of_department->user_id && $head_of_department->department->title)
+                            
+                                <p>{{ $head_of_department->department->title }}</p>
+
+                            @endif       
+                            @endforeach
                             </td>
+                           
                             <td>
 
                               <img src="/uploads/avators/{{ $profile->avator }}" width="60px" height="60px">

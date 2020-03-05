@@ -39,6 +39,15 @@
                             {{ $reward->reward }}
                         </td>
                     </tr>
+                    <tr>
+                        <th>
+                            Reward Details
+                        </th>
+                        <td>
+                            {{ $reward->description }}
+                        </td>
+                    </tr>
+
                 </tbody>
             </table>
             <div class="form-group">

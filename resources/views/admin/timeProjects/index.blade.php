@@ -22,11 +22,9 @@
                         <th width="10">
 
                         </th>
+                        
                         <th>
-                            {{ trans('cruds.timeProject.fields.id') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.timeProject.fields.name') }}
+                            Project {{ trans('cruds.timeProject.fields.name') }}
                         </th>
                         <th>
                             &nbsp;
@@ -39,19 +37,12 @@
                             <td>
 
                             </td>
-                            <td>
-                                {{ $timeProject->id ?? '' }}
-                            </td>
+                            
                             <td>
                                 {{ $timeProject->name ?? '' }}
                             </td>
                             <td>
-                                @can('time_project_show')
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.time-projects.show', $timeProject->id) }}">
-                                        {{ trans('global.view') }}
-                                    </a>
-                                @endcan
-
+                                
                                 @if(Auth::id() == $timeProject->user_id)
                                 @can('time_project_edit')
                                     <a class="btn btn-xs btn-info" href="{{ route('admin.time-projects.edit', $timeProject->id) }}">

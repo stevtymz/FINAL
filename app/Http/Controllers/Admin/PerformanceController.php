@@ -8,6 +8,7 @@ use App\Http\Requests\StorePerformanceRequest;
 use App\Http\Requests\UpdatePerformanceRequest;
 use App\Performance;
 use App\Profile;
+use App\DepartmentUser;
 use App\User;
 use Carbon\Carbon; 
 use App\Appraisal_period;
@@ -25,8 +26,9 @@ class PerformanceController extends Controller
 
         $performances = Performance::all();
         $dat = Appraisal_period::all();
+        $head_of_departments = DepartmentUser::with('department')->get();
 
-        return view('admin.performances.index', compact('performances','dat'));
+        return view('admin.performances.index', compact('performances','dat','head_of_departments'));
     }
 
     public function create()
