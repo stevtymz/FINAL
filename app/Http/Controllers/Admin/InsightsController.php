@@ -51,5 +51,7 @@ class InsightsController extends Controller
 
         return view('admin.insights.insight', compact('roles','performances','appraised','roles2','performances2','appraised2'));
     }
+
+    
  
 }

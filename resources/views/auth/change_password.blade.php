@@ -44,7 +44,7 @@
 					</div>
 				</div>
 				<div class="form-group">
-				{!! Form::submit(trans('global.save'), ['class' => 'btn btn-danger']) !!}
+				{!! Form::submit(trans('global.save'), ['class' => 'btn btn-primary']) !!}
 				{!! Form::close() !!}
 				@endif
 				</div>

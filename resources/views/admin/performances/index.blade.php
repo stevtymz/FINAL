@@ -115,7 +115,7 @@
                             <td>
                                 @can('performance_show')
                                     <a  name="button2" class="btn btn-xs btn-primary" href="{{ route('admin.performances.show', $performance->id) }}">
-                                        {{ trans('global.view') }}
+                                       Details
                                     </a>
                                 @endcan
                                 @if(Auth::id() == $performance->head_of_department_id)
@@ -135,8 +135,11 @@
                                     </form>
                                 @endcan
 
-                                     <a name="button1" class="btn btn-xs btn-primary" href="{{ route('admin.performance.show', $performance->id) }}">
+                                <a name="button1" class="btn btn-xs btn-primary" href="{{ route('admin.performance.show', $performance->id) }}">
                                 Graph
+                                </a>
+                                <a name="button1" class="btn btn-xs btn-success" href="{{ route('admin.report.show', $performance->id) }}">
+                                Report
                                 </a>
                                 
                             </td>

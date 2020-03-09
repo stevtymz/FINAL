@@ -58,10 +58,18 @@ Route::group(['middleware' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin',
     Route::resource('performances', 'PerformanceController');
 
     // showPerformance graph
-    
+ 
     Route::delete('performance/destroy', 'ShowPerformanceController@massDestroy')->name('performance.massDestroy');
     Route::resource('performance', 'ShowPerformanceController');
     
+    //Reports
+    Route::get('report',array('as'=>'report','uses'=>'ReportController@show'));
+    Route::resource('report', 'ReportController');
+
+    //PDF results
+    Route::get('generatePDF/{id}','PDFController@generatePDF');
+
+
     //AppraisalPeriod
     Route::resource('time-entry', 'AppraisalPeriodController');
     

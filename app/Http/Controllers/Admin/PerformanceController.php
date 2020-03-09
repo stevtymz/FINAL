@@ -93,6 +93,23 @@ class PerformanceController extends Controller
         
     }
     
+    public function shows(Performance $performance)
+    {   
+        
+             $performance->load('profile', 'head_of_department'); 
+
+             foreach(auth()->user()->unreadNotifications as $notification) {
+                if ($notification->read_at === null) {
+                    $notification->read_at = Carbon::now();
+                    $notification->save();
+                }
+            }
+
+             return view('admin.reports.show', compact('performance'));
+          
+        
+    }
+
     public function destroy(Performance $performance)
     {
         abort_if(Gate::denies('performance_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');

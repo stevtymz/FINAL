@@ -90,17 +90,7 @@ class ShowPerformanceController extends Controller
     
         return view('admin.graphs.show', compact('chart','chart1')); 
     }
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
+  
     /**
      * Update the specified resource in storage.
      *
