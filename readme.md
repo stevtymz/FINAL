@@ -4,7 +4,7 @@
 
 This was devolped as my final year project.
 
-#features
+## Features
 self-evaluation
 departmental evaluation
 graphical view of results
